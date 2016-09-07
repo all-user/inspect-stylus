@@ -1,0 +1,23 @@
+{
+  "name": "inspect-stylus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "inspect": "SHELL=/bin/bash chokidar 'files/inspect.js' -c 'stylus files/test.styl'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/all-user/inspect-stylus.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/all-user/inspect-stylus/issues"
+  },
+  "homepage": "https://github.com/all-user/inspect-stylus#readme",
+  "dependencies": {
+    "chokidar-cli": "^1.2.0",
+    "stylus": "^0.54.5"
+  }
+}
