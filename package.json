@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "inspect": "SHELL=/bin/bash chokidar 'files/inspect.js' -c 'stylus files/test.styl'"
+    "help": "npm-run-help",
+    "watch:js": "babel -w files/inspect.js -o lib/inspect.js",
+    "watch:rose": "rosetta --cssOut lib/test.styl --jsOut lib/test.js files/test.rose",
+    "inspect": "SHELL=/bin/bash chokidar 'lib/inspect.js' -c 'stylus -u nib files/test.styl'",
+    "start": "npm-run-all -p watch:js inspect"
   },
   "repository": {
     "type": "git",
@@ -17,7 +21,18 @@
   },
   "homepage": "https://github.com/all-user/inspect-stylus#readme",
   "dependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-latest": "^6.14.0",
     "chokidar-cli": "^1.2.0",
+    "npm-run-all": "^3.1.0",
+    "rosetta": "^0.3.0",
     "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.5.0",
+    "nib": "^1.1.2",
+    "npm-run-help": "^1.1.0"
   }
 }
