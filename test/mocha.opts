@@ -1,0 +1,3 @@
+--compilers babel-register
+-r babel-polyfill
+-R spec
