@@ -13,7 +13,7 @@ describe('CLI --use', () => {
     return Promise
       .try(() => {
         return new Promise(done => {
-          child_process.spawn('stylus', ['--use', './plugin.js', './vars.styl'], {
+          child_process.spawn('stylus', ['--use', './plugin.js', './index.styl'], {
             cwd: __dirname
           }).on('exit', () => {
             done();
@@ -31,7 +31,7 @@ describe('CLI --use', () => {
     return Promise
       .try(() => {
         return new Promise(done => {
-          child_process.spawn('stylus', ['--use', './plugin.js', '--with', 'value',  './vars.styl'], {
+          child_process.spawn('stylus', ['--use', './plugin.js', '--with', 'value',  './index.styl'], {
             cwd: __dirname
           }).on('exit', () => {
             done();
@@ -49,7 +49,7 @@ describe('CLI --use', () => {
     return Promise
       .try(() => {
         return new Promise(done => {
-          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '1234', './vars.styl'], {
+          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '1234', './index.styl'], {
             cwd: __dirname
           }).on('exit', () => {
             done();
@@ -68,7 +68,7 @@ describe('CLI --use', () => {
     return Promise
       .try(() => {
         return new Promise(done => {
-          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '\'value\'', './vars.styl'], {
+          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '\'value\'', './index.styl'], {
             cwd: __dirname
           }).on('exit', () => {
             done();
@@ -87,7 +87,7 @@ describe('CLI --use', () => {
     return Promise
       .try(() => {
         return new Promise(done => {
-          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '{}', './vars.styl'], {
+          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '{}', './index.styl'], {
             cwd: __dirname
           }).on('exit', () => {
             done();
@@ -105,7 +105,7 @@ describe('CLI --use', () => {
     return Promise
       .try(() => {
         return new Promise(done => {
-          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '[]', './vars.styl'], {
+          child_process.spawn('stylus', ['--use', './plugin.js', '--with', '[]', './index.styl'], {
             cwd: __dirname
           }).on('exit', () => {
             done();
@@ -123,7 +123,7 @@ describe('CLI --use', () => {
     return Promise
       .try(() => {
         return new Promise(done => {
-          child_process.spawn('stylus', ['--use', './plugin.js', '--with', 'function() {}', './vars.styl'], {
+          child_process.spawn('stylus', ['--use', './plugin.js', '--with', 'function() {}', './index.styl'], {
             cwd: __dirname
           }).on('exit', () => {
             done();

@@ -6,7 +6,7 @@ import _fs from 'fs';
 
 const fs = Promise.promisifyAll(_fs);
 
-const SOURCE_PATH = path.resolve(__dirname, './vars.styl');
+const SOURCE_PATH = path.resolve(__dirname, './index.styl');
 
 describe('Renderer', () => {
   it('arguments.length === 1', () => {
