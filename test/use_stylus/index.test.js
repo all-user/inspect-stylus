@@ -3,7 +3,6 @@ import Promise from 'bluebird';
 import stylus from 'stylus';
 import path from 'path';
 import _fs from 'fs';
-import child_process from 'child_process';
 
 const fs = Promise.promisifyAll(_fs);
 
@@ -78,11 +77,13 @@ describe('stylus use(path)', () => {
     return Promise
       .try(() => fs.readFileAsync(ARG_STRING_PATH, 'utf8'))
       .then(str => {
-        return new Promise(done => {
+        return new Promise((done, fail) => {
           stylus(str)
             .set('filename', 'index.css')
             .render(err => {
-              assert.notStrictEqual(err, void 0);
+              assert.throws(() => {
+                if (err) throw err;
+              }, Error);
               done();
             });
         });
