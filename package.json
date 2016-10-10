@@ -31,6 +31,7 @@
     "babel-eslint": "^7.0.0",
     "eslint": "^3.7.1",
     "npm-run-help": "^1.1.0",
-    "power-assert": "^1.4.1"
+    "power-assert": "^1.4.1",
+    "projectz": "^1.2.0"
   }
 }
