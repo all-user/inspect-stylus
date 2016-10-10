@@ -21,84 +21,9 @@ describe('evaluator.renderer.nodes', () => {
   require('./evaluator_renderer_nodes_unit.js');
   require('./evaluator_renderer_nodes_rgba.js');
   require('./evaluator_renderer_nodes_hsla.js');
-
-  it('identExpression.nodes[0].constructor === evaluator.renderer.nodes.Ident', () => {
-    return new Promise(done => {
-      const assertionFn = function(renderer) {
-        renderer.define('plugin-fn', function() {
-          const vars = this.global.scope.locals;
-          assert.strictEqual(vars['ident-var'].nodes[0].constructor, this.renderer.nodes.Ident);
-          done();
-        });
-      };
-      stylus(fs.readFileSync(IDENT_VAR_PATH, 'utf8'))
-        .set('filename', 'index.css')
-        .use(assertionFn)
-        .render();
-    });
-  });
-
-  it('cubicBezierExpression.nodes[0].constructor === evaluator.renderer.nodes.Call', () => {
-    return new Promise(done => {
-      const assertionFn = function(renderer) {
-        renderer.define('plugin-fn', function() {
-          const vars = this.global.scope.locals;
-          assert.strictEqual(vars['cubic-bezier-var'].nodes[0].constructor, this.renderer.nodes.Call);
-          done();
-        });
-      };
-      stylus(fs.readFileSync(CUBIC_BEZIER_VAR_PATH, 'utf8'))
-        .set('filename', 'index.css')
-        .use(assertionFn)
-        .render();
-    });
-  });
-
-  it('tupleExpression.constructor === evaluator.renderer.nodes.Expression', () => {
-    return new Promise(done => {
-      const assertionFn = function(renderer) {
-        renderer.define('plugin-fn', function() {
-          const vars = this.global.scope.locals;
-          assert.strictEqual(vars['tuple-var'].constructor, this.renderer.nodes.Expression);
-          done();
-        });
-      };
-      stylus(fs.readFileSync(TUPLE_VAR_PATH, 'utf8'))
-        .set('filename', 'index.css')
-        .use(assertionFn)
-        .render();
-    });
-  });
-
-  it('listExpression.constructor === evaluator.renderer.nodes.Expression', () => {
-    return new Promise(done => {
-      const assertionFn = function(renderer) {
-        renderer.define('plugin-fn', function() {
-          const vars = this.global.scope.locals;
-          assert.strictEqual(vars['list-var'].constructor, this.renderer.nodes.Expression);
-          done();
-        });
-      };
-      stylus(fs.readFileSync(LIST_VAR_PATH, 'utf8'))
-        .set('filename', 'index.css')
-        .use(assertionFn)
-        .render();
-    });
-  });
-
-  it('hashExpression.nodes[0].constructor === evaluator.renderer.nodes.Object', () => {
-    return new Promise(done => {
-      const assertionFn = function(renderer) {
-        renderer.define('plugin-fn', function() {
-          const vars = this.global.scope.locals;
-          assert.strictEqual(vars['hash-var'].nodes[0].constructor, this.renderer.nodes.Object);
-          done();
-        });
-      };
-      stylus(fs.readFileSync(HASH_VAR_PATH, 'utf8'))
-        .set('filename', 'index.css')
-        .use(assertionFn)
-        .render();
-    });
-  });
+  require('./evaluator_renderer_nodes_ident.js');
+  require('./evaluator_renderer_nodes_cubic-bezier.js');
+  require('./evaluator_renderer_nodes_tuple.js');
+  require('./evaluator_renderer_nodes_list.js');
+  require('./evaluator_renderer_nodes_hash.js');
 });
