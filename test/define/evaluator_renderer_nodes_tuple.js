@@ -34,7 +34,7 @@ describe('tuple', () => {
     assert.strictEqual(tupleExpression.constructor, evaluator.renderer.nodes.Expression);
   });
 
-  it('tupleExpression.isList === false', () => {
+  it('tupleExpression.isList === undefined', () => {
     assert.strictEqual(tupleExpression.isList, void 0);
   });
 
@@ -43,5 +43,14 @@ describe('tuple', () => {
     assert.strictEqual(tupleExpression.nodes[1].val, 20);
     assert.strictEqual(tupleExpression.nodes[2].val, 30);
     assert.strictEqual(tupleExpression.nodes[3].val, 40);
+  });
+
+  it('new evaluator.renderer.nodes.Expression(isList)', () => {
+    const tuple = new evaluator.renderer.nodes.Expression();
+    const px = new evaluator.renderer.nodes.Unit(20, 'px');
+    tuple.push(px);
+    assert.strictEqual(tuple.isList, void 0);
+    assert.strictEqual(tuple.nodes[0].val, 20);
+    assert.strictEqual(tuple.nodes[0].type, 'px');
   });
 });

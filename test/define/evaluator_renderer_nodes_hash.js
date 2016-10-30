@@ -37,4 +37,12 @@ describe('hash', () => {
   it('get value from instance.vals', () => {
     assert.strictEqual(hashExpression.nodes[0].vals.foo.nodes[0].val, 1);
   });
+
+  it('evaluator.renderer.nodes.Object.prototype.set(key, value)', () => {
+    const obj = new evaluator.renderer.nodes.Object();
+    obj.set('foo', new evaluator.renderer.nodes.String('bar'));
+    assert.strictEqual(obj.vals.foo.string, 'bar');
+    assert.strictEqual(obj.vals.foo.val, 'bar');
+  });
+
 });

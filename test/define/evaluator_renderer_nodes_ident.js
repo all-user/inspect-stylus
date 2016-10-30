@@ -41,4 +41,10 @@ describe('evaluator.renderer.nodes.Ident', () => {
   it('get value from instance.string', () => {
     assert.strictEqual(identExpression.nodes[0].string, 'auto');
   });
+
+  it('new evaluator.renderer.nodes.Ident(name)', () => {
+    const auto = new evaluator.renderer.nodes.Ident('auto');
+    assert.strictEqual(auto.name, 'auto');
+    assert.strictEqual(auto.string, 'auto');
+  });
 });

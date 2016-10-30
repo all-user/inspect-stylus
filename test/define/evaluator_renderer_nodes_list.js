@@ -44,4 +44,13 @@ describe('list', () => {
     assert.strictEqual(listExpression.nodes[2].nodes[0].val, 3);
     assert.strictEqual(listExpression.nodes[3].nodes[0].val, 4);
   });
+
+  it('new evaluator.renderer.nodes.Expression(isList)', () => {
+    const list = new evaluator.renderer.nodes.Expression(true);
+    const px = new evaluator.renderer.nodes.Unit(20, 'px');
+    list.push(px);
+    assert.strictEqual(list.isList, true);
+    assert.strictEqual(list.nodes[0].val, 20);
+    assert.strictEqual(list.nodes[0].type, 'px');
+  });
 });

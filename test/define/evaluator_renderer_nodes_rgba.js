@@ -77,4 +77,12 @@ describe('evaluator.renderer.nodes.RGBA', () => {
     assert.strictEqual(rgbExpression.nodes[0].raw, void 0);
     assert.strictEqual(rgbaExpression.nodes[0].raw, void 0);
   });
+
+  it('new evaluator.renderer.nodes.RGBA(r, g, b, a)', () => {
+    const rgba = new evaluator.renderer.nodes.RGBA(1, 2, 3, .4);
+    assert.strictEqual(rgba.r, 1);
+    assert.strictEqual(rgba.g, 2);
+    assert.strictEqual(rgba.b, 3);
+    assert.strictEqual(rgba.a, .4);
+  });
 });

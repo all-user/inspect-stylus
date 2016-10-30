@@ -61,4 +61,10 @@ describe('evaluator.renderer.nodes.Unit', () => {
     assert.strictEqual(degExpression.nodes[0].type, 'deg');
     assert.strictEqual(nonUnitExpression.nodes[0].type, void 0);
   });
+
+  it('new evaluator.renderer.nodes.Unit(val, type)', () => {
+    const px = new evaluator.renderer.nodes.Unit(20, 'px');
+    assert.strictEqual(px.val, 20);
+    assert.strictEqual(px.type, 'px');
+  });
 });

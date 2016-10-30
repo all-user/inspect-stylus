@@ -48,4 +48,17 @@ describe('evaluator.renderer.nodes.Call', () => {
     assert.strictEqual(cubicBezierExpression.nodes[0].args.nodes[2].nodes[0].val, 1);
     assert.strictEqual(cubicBezierExpression.nodes[0].args.nodes[3].nodes[0].val, 0);
   });
+
+  it('new evaluator.renderer.nodes.Call(name, args)', () => {
+    const args = new evaluator.renderer.nodes.Expression();
+    for (let i = 0; i < 4; i++) {
+      args.push(new evaluator.renderer.nodes.Unit(1));
+    }
+    const call = new evaluator.renderer.nodes.Call('cubic-bezier', args);
+    assert.strictEqual(call.name, 'cubic-bezier');
+    assert.strictEqual(call.args.nodes[0].val, 1);
+    assert.strictEqual(call.args.nodes[1].val, 1);
+    assert.strictEqual(call.args.nodes[2].val, 1);
+    assert.strictEqual(call.args.nodes[3].val, 1);
+  });
 });

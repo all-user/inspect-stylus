@@ -56,4 +56,12 @@ describe('evaluator.renderer.nodes.HSLA', () => {
     assert.strictEqual(hslExpression.nodes[0].a, 1);
     assert.strictEqual(hslaExpression.nodes[0].a, .4);
   });
+
+  it('new evaluator.renderer.nodes.HSLA(h, s, l, a)', () => {
+    const hsla = new evaluator.renderer.nodes.HSLA(1, 2, 3, .4);
+    assert.strictEqual(hsla.h, 1);
+    assert.strictEqual(hsla.s, 2);
+    assert.strictEqual(hsla.l, 3);
+    assert.strictEqual(hsla.a, .4);
+  });
 });
