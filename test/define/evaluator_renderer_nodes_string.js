@@ -42,7 +42,7 @@ describe('evaluator.renderer.nodes.String', () => {
     assert.strictEqual(stringExpression.nodes[0].val, 'some string');
   });
 
-  it('new evaluator.renderer.nodes.String(text)', () => {
+  it('new evaluator.renderer.nodes.String(val)', () => {
     const text = new evaluator.renderer.nodes.String('text');
     assert.strictEqual(text.string, 'text');
     assert.strictEqual(text.val, 'text');
